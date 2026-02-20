@@ -25,6 +25,15 @@ public class Week1Tut {
                         System.out.println("Topic not added!");
                         break;
                     } 
+                    int check = 0;
+                    for(Topic top : topics){
+                        if(topicName.equalsIgnoreCase(top.getTopicName())){
+                            System.out.println("Topic not added! Already present!");
+                            check=1;
+                            break;
+                        }
+                    }
+                    if(check==1) break;
                     int id = topics.size()+1;   // id will start from 1 so size +1
                     Topic topic = new Topic(id, topicName);  // create topic object to add to arraylist
                     topics.add(topic);                       // add to the topics list  
